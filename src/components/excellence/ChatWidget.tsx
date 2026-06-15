@@ -20,7 +20,7 @@ interface Message {
 const AI_REPLIES = [
   "Hello! Welcome to Excellence. How can I help you today? 😊",
   "Great question! Our team is dedicated to providing the best solutions for your business.",
-  "I'd be happy to help you with that. Could you share more details?",
+  "I&apos;d be happy to help you with that. Could you share more details?",
   "Absolutely! Excellence offers a wide range of premium products tailored to your needs.",
   "Thank you for reaching out! Is there anything else I can help you with?",
   "Our support team is available 24/7 to assist you. What would you like to know?",
@@ -229,7 +229,7 @@ export default function ChatWidget() {
   const [skipPassword, setSkipPassword] = useState(false);
   const [formError, setFormError] = useState("");
   const [otpError, setOtpError] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
+  const [_otpSent, setOtpSent] = useState(false);
   const [otpResendTimer, setOtpResendTimer] = useState(0);
   const [loading, setLoading] = useState(false);
 
@@ -237,7 +237,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [userName, setUserName] = useState("");
+  const [_userName, setUserName] = useState("");
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -475,7 +475,7 @@ export default function ChatWidget() {
                 ) : "Send OTP →"}
               </button>
               <p className="text-[10px] text-gray-400 text-center mt-3">
-                We'll send a one-time password to verify your number.
+                We&apos;ll send a one-time password to verify your number.
               </p>
             </div>
           )}
